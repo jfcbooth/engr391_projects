@@ -1,7 +1,7 @@
 configName: default
 folderName: MyProject2
 format_version: v1.0
-frameworkPath: ..\..\..\..\Harmony3
+frameworkPath: C:\Harmony3
 processor: PIC32MX370F512L
 projectName: MyProject2
 settings:
