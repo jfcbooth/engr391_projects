@@ -89,6 +89,24 @@
 #define axeEn_Get()               ((PORTA >> 1) & 0x1)
 #define axeEn_PIN                  GPIO_PIN_RA1
 
+/*** Macros for BT_CTS pin ***/
+#define BT_CTS_Set()               (LATFSET = (1<<13))
+#define BT_CTS_Clear()             (LATFCLR = (1<<13))
+#define BT_CTS_Toggle()            (LATFINV= (1<<13))
+#define BT_CTS_OutputEnable()      (TRISFCLR = (1<<13))
+#define BT_CTS_InputEnable()       (TRISFSET = (1<<13))
+#define BT_CTS_Get()               ((PORTF >> 13) & 0x1)
+#define BT_CTS_PIN                  GPIO_PIN_RF13
+
+/*** Macros for BT_RTS pin ***/
+#define BT_RTS_Set()               (LATFSET = (1<<12))
+#define BT_RTS_Clear()             (LATFCLR = (1<<12))
+#define BT_RTS_Toggle()            (LATFINV= (1<<12))
+#define BT_RTS_OutputEnable()      (TRISFCLR = (1<<12))
+#define BT_RTS_InputEnable()       (TRISFSET = (1<<12))
+#define BT_RTS_Get()               ((PORTF >> 12) & 0x1)
+#define BT_RTS_PIN                  GPIO_PIN_RF12
+
 /*** Macros for rightDir pin ***/
 #define rightDir_Set()               (LATDSET = (1<<14))
 #define rightDir_Clear()             (LATDCLR = (1<<14))
@@ -98,6 +116,24 @@
 #define rightDir_Get()               ((PORTD >> 14) & 0x1)
 #define rightDir_PIN                  GPIO_PIN_RD14
 
+/*** Macros for BT_TX pin ***/
+#define BT_TX_Set()               (LATFSET = (1<<4))
+#define BT_TX_Clear()             (LATFCLR = (1<<4))
+#define BT_TX_Toggle()            (LATFINV= (1<<4))
+#define BT_TX_OutputEnable()      (TRISFCLR = (1<<4))
+#define BT_TX_InputEnable()       (TRISFSET = (1<<4))
+#define BT_TX_Get()               ((PORTF >> 4) & 0x1)
+#define BT_TX_PIN                  GPIO_PIN_RF4
+
+/*** Macros for BT_RX pin ***/
+#define BT_RX_Set()               (LATFSET = (1<<5))
+#define BT_RX_Clear()             (LATFCLR = (1<<5))
+#define BT_RX_Toggle()            (LATFINV= (1<<5))
+#define BT_RX_OutputEnable()      (TRISFCLR = (1<<5))
+#define BT_RX_InputEnable()       (TRISFSET = (1<<5))
+#define BT_RX_Get()               ((PORTF >> 5) & 0x1)
+#define BT_RX_PIN                  GPIO_PIN_RF5
+
 /*** Macros for rightEn pin ***/
 #define rightEn_Set()               (LATFSET = (1<<8))
 #define rightEn_Clear()             (LATFCLR = (1<<8))
@@ -106,6 +142,15 @@
 #define rightEn_InputEnable()       (TRISFSET = (1<<8))
 #define rightEn_Get()               ((PORTF >> 8) & 0x1)
 #define rightEn_PIN                  GPIO_PIN_RF8
+
+/*** Macros for BT_~RST pin ***/
+#define BT_~RST_Set()               (LATDSET = (1<<0))
+#define BT_~RST_Clear()             (LATDCLR = (1<<0))
+#define BT_~RST_Toggle()            (LATDINV= (1<<0))
+#define BT_~RST_OutputEnable()      (TRISDCLR = (1<<0))
+#define BT_~RST_InputEnable()       (TRISDSET = (1<<0))
+#define BT_~RST_Get()               ((PORTD >> 0) & 0x1)
+#define BT_~RST_PIN                  GPIO_PIN_RD0
 
 /*** Macros for leftEn pin ***/
 #define leftEn_Set()               (LATDSET = (1<<3))
@@ -133,6 +178,15 @@
 #define BTN2_InputEnable()       (TRISASET = (1<<7))
 #define BTN2_Get()               ((PORTA >> 7) & 0x1)
 #define BTN2_PIN                  GPIO_PIN_RA7
+
+/*** Macros for BT_STATUS pin ***/
+#define BT_STATUS_Set()               (LATESET = (1<<0))
+#define BT_STATUS_Clear()             (LATECLR = (1<<0))
+#define BT_STATUS_Toggle()            (LATEINV= (1<<0))
+#define BT_STATUS_OutputEnable()      (TRISECLR = (1<<0))
+#define BT_STATUS_InputEnable()       (TRISESET = (1<<0))
+#define BT_STATUS_Get()               ((PORTE >> 0) & 0x1)
+#define BT_STATUS_PIN                  GPIO_PIN_RE0
 
 
 // *****************************************************************************

@@ -40,12 +40,12 @@ int main ( void )
     SYS_Initialize ( NULL );
     setup_motors();
     
-//    int speed = 10;
-//    int direction = 1;
+    int speed = 10;
+    int direction = 1;
     
-//    set_direction(direction,direction); // both forward
-//    set_speed(speed, speed);
-    attack_set_direction(1);
+    movement_set_direction(direction,direction); // both forward
+    movement_set_speed(speed, speed);
+    //attack_set_direction(1);
     while ( true )
     {
         /* Maintain state machines of all polled MPLAB Harmony modules. */
