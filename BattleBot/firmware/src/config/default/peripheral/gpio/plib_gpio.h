@@ -62,41 +62,59 @@
 // *****************************************************************************
 
 
-/*** Macros for rightEn pin ***/
-#define rightEn_Set()               (LATDSET = (1<<1))
-#define rightEn_Clear()             (LATDCLR = (1<<1))
-#define rightEn_Toggle()            (LATDINV= (1<<1))
-#define rightEn_OutputEnable()      (TRISDCLR = (1<<1))
-#define rightEn_InputEnable()       (TRISDSET = (1<<1))
-#define rightEn_Get()               ((PORTD >> 1) & 0x1)
-#define rightEn_PIN                  GPIO_PIN_RD1
-
-/*** Macros for leftEn pin ***/
-#define leftEn_Set()               (LATDSET = (1<<2))
-#define leftEn_Clear()             (LATDCLR = (1<<2))
-#define leftEn_Toggle()            (LATDINV= (1<<2))
-#define leftEn_OutputEnable()      (TRISDCLR = (1<<2))
-#define leftEn_InputEnable()       (TRISDSET = (1<<2))
-#define leftEn_Get()               ((PORTD >> 2) & 0x1)
-#define leftEn_PIN                  GPIO_PIN_RD2
+/*** Macros for axeDir pin ***/
+#define axeDir_Set()               (LATASET = (1<<0))
+#define axeDir_Clear()             (LATACLR = (1<<0))
+#define axeDir_Toggle()            (LATAINV= (1<<0))
+#define axeDir_OutputEnable()      (TRISACLR = (1<<0))
+#define axeDir_InputEnable()       (TRISASET = (1<<0))
+#define axeDir_Get()               ((PORTA >> 0) & 0x1)
+#define axeDir_PIN                  GPIO_PIN_RA0
 
 /*** Macros for leftDir pin ***/
-#define leftDir_Set()               (LATDSET = (1<<6))
-#define leftDir_Clear()             (LATDCLR = (1<<6))
-#define leftDir_Toggle()            (LATDINV= (1<<6))
-#define leftDir_OutputEnable()      (TRISDCLR = (1<<6))
-#define leftDir_InputEnable()       (TRISDSET = (1<<6))
-#define leftDir_Get()               ((PORTD >> 6) & 0x1)
-#define leftDir_PIN                  GPIO_PIN_RD6
+#define leftDir_Set()               (LATESET = (1<<9))
+#define leftDir_Clear()             (LATECLR = (1<<9))
+#define leftDir_Toggle()            (LATEINV= (1<<9))
+#define leftDir_OutputEnable()      (TRISECLR = (1<<9))
+#define leftDir_InputEnable()       (TRISESET = (1<<9))
+#define leftDir_Get()               ((PORTE >> 9) & 0x1)
+#define leftDir_PIN                  GPIO_PIN_RE9
+
+/*** Macros for axeEn pin ***/
+#define axeEn_Set()               (LATASET = (1<<1))
+#define axeEn_Clear()             (LATACLR = (1<<1))
+#define axeEn_Toggle()            (LATAINV= (1<<1))
+#define axeEn_OutputEnable()      (TRISACLR = (1<<1))
+#define axeEn_InputEnable()       (TRISASET = (1<<1))
+#define axeEn_Get()               ((PORTA >> 1) & 0x1)
+#define axeEn_PIN                  GPIO_PIN_RA1
 
 /*** Macros for rightDir pin ***/
-#define rightDir_Set()               (LATDSET = (1<<7))
-#define rightDir_Clear()             (LATDCLR = (1<<7))
-#define rightDir_Toggle()            (LATDINV= (1<<7))
-#define rightDir_OutputEnable()      (TRISDCLR = (1<<7))
-#define rightDir_InputEnable()       (TRISDSET = (1<<7))
-#define rightDir_Get()               ((PORTD >> 7) & 0x1)
-#define rightDir_PIN                  GPIO_PIN_RD7
+#define rightDir_Set()               (LATDSET = (1<<14))
+#define rightDir_Clear()             (LATDCLR = (1<<14))
+#define rightDir_Toggle()            (LATDINV= (1<<14))
+#define rightDir_OutputEnable()      (TRISDCLR = (1<<14))
+#define rightDir_InputEnable()       (TRISDSET = (1<<14))
+#define rightDir_Get()               ((PORTD >> 14) & 0x1)
+#define rightDir_PIN                  GPIO_PIN_RD14
+
+/*** Macros for rightEn pin ***/
+#define rightEn_Set()               (LATFSET = (1<<8))
+#define rightEn_Clear()             (LATFCLR = (1<<8))
+#define rightEn_Toggle()            (LATFINV= (1<<8))
+#define rightEn_OutputEnable()      (TRISFCLR = (1<<8))
+#define rightEn_InputEnable()       (TRISFSET = (1<<8))
+#define rightEn_Get()               ((PORTF >> 8) & 0x1)
+#define rightEn_PIN                  GPIO_PIN_RF8
+
+/*** Macros for leftEn pin ***/
+#define leftEn_Set()               (LATDSET = (1<<3))
+#define leftEn_Clear()             (LATDCLR = (1<<3))
+#define leftEn_Toggle()            (LATDINV= (1<<3))
+#define leftEn_OutputEnable()      (TRISDCLR = (1<<3))
+#define leftEn_InputEnable()       (TRISDSET = (1<<3))
+#define leftEn_Get()               ((PORTD >> 3) & 0x1)
+#define leftEn_PIN                  GPIO_PIN_RD3
 
 /*** Macros for BTN1 pin ***/
 #define BTN1_Set()               (LATASET = (1<<6))

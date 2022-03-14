@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Battlebot.X
+PROJECTNAME=BattleBot.X
 
 # Active Configuration
 DEFAULTCONF=default
