@@ -2,11 +2,13 @@
 #include "config/default/peripheral/tmr/plib_tmr4.h"
 
 #define MIN_SPEED_VALUE 100
-#define SPEED_LEVEL_MULTIPLIER 15.5
+#define MAX_SPEED_VALUE 255
+#define SPEED_INCREMENTS 4
+#define SPEED_LEVEL_MULTIPLIER (MAX_SPEED_VALUE-MIN_SPEED_VALUE)/SPEED_INCREMENTS
 
 int leftSpeed = 0; // 0-255 scale for pwm
 int rightSpeed = 0;
-int axeSpeed = 255;
+int axeSpeed = MAX_SPEED_VALUE;
 
 
 void timer4_handler(uint32_t status, uintptr_t context){
@@ -39,46 +41,43 @@ void setup_motors(void){
     TMR4_Start();
 }
 
-void pause_tmr4(void){
-    TMR4_Stop();
-    TMR4_InterruptDisable();
-}
-
-void resume_tmr4(void){
-    TMR4_InterruptEnable();
-    TMR4_Start();
-}
-
-void movement_disable_motors(void ){
+void movement_disable_motors(void){
     // disable motors
     rightEn_Clear();
     leftEn_Clear();
 }
 
 // 1 = forwards, -1 = backwards (defaults to forward)
-void movement_set_direction(int left, int right){
+void movement_set_direction_left(int dir){
     TMR4_Stop();
     movement_disable_motors(); // always disable motors before changing direction to prevent a short
-    if(left == -1){
+    if(dir == -1){
         leftDir_Clear();
     } else{
         leftDir_Set();
     }
-    
-    if(right == -1){
-        rightDir_Set();
-    } else{
-        rightDir_Clear();
-    }    
     TMR4_Start();
 }
 
-void movement_set_speed(int left, int right){
+void movement_set_direction_right(int dir){
+    if(dir == -1){
+        rightDir_Set();
+    } else{
+        rightDir_Clear();
+    }
+}
+
+void movement_set_speed_left(int speed){
     TMR4_Stop();
-    left = (left < 0) ? 0 : (left > 10) ? 10 : left;
-    right = (right < 0) ? 0 : (right > 10) ? 10 : right;
-    leftSpeed = (int)(MIN_SPEED_VALUE + (left*SPEED_LEVEL_MULTIPLIER)); // makes value between 100-255
-    rightSpeed = (int)(MIN_SPEED_VALUE + (right*SPEED_LEVEL_MULTIPLIER)); // makes value between 100-255
+    speed = (speed < 0) ? 0 : (speed > SPEED_INCREMENTS) ? SPEED_INCREMENTS : speed;
+    leftSpeed = (speed==0) ? 0 : (int)(MIN_SPEED_VALUE + (speed*SPEED_LEVEL_MULTIPLIER)); // makes value between 100-255
+    TMR4_Start();
+}
+
+void movement_set_speed_right(int speed){
+    TMR4_Stop();
+    speed = (speed < 0) ? 0 : (speed > SPEED_INCREMENTS) ? SPEED_INCREMENTS : speed;
+    rightSpeed = (speed==0) ? 0 : (int)(MIN_SPEED_VALUE + (speed*SPEED_LEVEL_MULTIPLIER)); // makes value between 100-255
     TMR4_Start();
 }
 
@@ -94,14 +93,14 @@ void attack_disable_motors(void ){
 }
 
 
-
-// speeds level from 0-10
-void attack_set_speed(int left, int right){
+// speeds level from 0-1
+void attack_set_speed(int speed){
     TMR4_Stop();
-    left = (left < 0) ? 0 : (left > 10) ? 10 : left;
-    right = (right < 0) ? 0 : (right > 10) ? 10 : right;
-    leftSpeed = (int)(MIN_SPEED_VALUE + (left*SPEED_LEVEL_MULTIPLIER)); // makes value between 100-255
-    rightSpeed = (int)(MIN_SPEED_VALUE + (right*SPEED_LEVEL_MULTIPLIER)); // makes value between 100-255
+    if(speed == 1){
+        axeSpeed = MAX_SPEED_VALUE;
+    } else{
+        axeSpeed = 0;
+    }
     TMR4_Start();
 }
 
@@ -118,12 +117,19 @@ void attack_set_direction(int dir){
     TMR4_Start();
 }
 
-//// speeds level from 0-10
-//void attack_set_speed(int left, int right){
-//    TMR4_Stop();
-//    left = (left < 0) ? 0 : (left > 10) ? 10 : left;
-//    right = (right < 0) ? 0 : (right > 10) ? 10 : right;
-//    leftSpeed = (int)(MIN_SPEED_VALUE + (left*SPEED_LEVEL_MULTIPLIER)); // makes value between 100-255
-//    rightSpeed = (int)(MIN_SPEED_VALUE + (right*SPEED_LEVEL_MULTIPLIER)); // makes value between 100-255
-//    TMR4_Start();
-//}
+
+void attack_chop(void){
+    attack_set_direction(-1); // go down
+    int count = 0;
+    int en1 = 0;
+    attack_set_speed(1); // turn on attack
+    while(count < 15){
+        int val = axeSensorB_Get();
+        if(val != en1){
+            en1 = val;
+            count++;
+        }
+    }
+    attack_set_speed(-1); // turn on attack
+
+}

@@ -5,7 +5,7 @@ frameworkPath: F:\harmony
 processor: PIC32MX460F512L
 projectName: BattleBot
 settings:
-  PackageFilter: bsp;core;core_apps_pic32mx;csp;dev_packs;quick_docs;usb
+  PackageFilter: csp;dev_packs;quick_docs
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
   TRUSTZONE: 'false'

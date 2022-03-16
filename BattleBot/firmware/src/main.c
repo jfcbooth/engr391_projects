@@ -27,6 +27,7 @@
 #include <stdlib.h>                     // Defines EXIT_FAILURE
 #include "definitions.h"                // SYS function prototypes
 #include "motor.h"
+#include "bt.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -39,27 +40,38 @@ int main ( void )
     /* Initialize all modules */
     SYS_Initialize ( NULL );
     setup_motors();
+//    setup_bt();
+
+//   movement_set_direction_right(1);
+//   movement_set_speed_right(5);
+//    attack_set_direction(1);
+//    attack_set_speed(1);
     
-    int speed = 10;
-    int direction = 1;
-    
-    movement_set_direction(direction,direction); // both forward
-    movement_set_speed(speed, speed);
-    //attack_set_direction(1);
+    attack_chop();
+
     while ( true )
     {
+        if(axeSensorA_Get() == 1){
+            LED3_Set();
+        } else {
+            LED3_Clear();
+        }
+        if(axeSensorB_Get() == 1){
+            LED4_Set();
+        } else {
+            LED4_Clear();
+        }
+        if(BT_STATUS_Get() == 1){
+            LED1_Set();
+        } else {
+            LED1_Clear();
+        }
+        
+        
+       
         /* Maintain state machines of all polled MPLAB Harmony modules. */
         SYS_Tasks ( );
 
-//        if(BTN1_Get()){
-//            speed = (speed >= 10) ? 0 : speed+1;
-//            set_speed(speed, speed);
-//        }
-        
-//        if(BTN2_Get()){
-//            direction = (direction == 1) ? -1 : 1;
-//            set_direction(direction, direction);
-//        }
     }
 
     /* Execution should not come here during normal operation */
