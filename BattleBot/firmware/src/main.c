@@ -40,14 +40,8 @@ int main ( void )
     /* Initialize all modules */
     SYS_Initialize ( NULL );
     setup_motors();
-//    setup_bt();
+    setup_bt();  
 
-//   movement_set_direction_right(1);
-//   movement_set_speed_right(5);
-//    attack_set_direction(1);
-//    attack_set_speed(1);
-    
-    attack_chop();
 
     while ( true )
     {
@@ -66,7 +60,6 @@ int main ( void )
         } else {
             LED1_Clear();
         }
-        
         
        
         /* Maintain state machines of all polled MPLAB Harmony modules. */

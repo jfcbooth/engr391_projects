@@ -22,7 +22,6 @@
             </logicalFolder>
             <logicalFolder name="f5" displayName="uart" projectFiles="true">
               <itemPath>../src/config/default/peripheral/uart/plib_uart_common.h</itemPath>
-              <itemPath>../src/config/default/peripheral/uart/plib_uart1.h</itemPath>
               <itemPath>../src/config/default/peripheral/uart/plib_uart2.h</itemPath>
             </logicalFolder>
           </logicalFolder>
@@ -63,7 +62,6 @@
               <itemPath>../src/config/default/peripheral/tmr/plib_tmr4.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f5" displayName="uart" projectFiles="true">
-              <itemPath>../src/config/default/peripheral/uart/plib_uart1.c</itemPath>
               <itemPath>../src/config/default/peripheral/uart/plib_uart2.c</itemPath>
             </logicalFolder>
           </logicalFolder>
@@ -89,7 +87,6 @@
         <itemPath>../src/config/default/default.mhc/project.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/settings.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/tmr4.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/uart1.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/uart2.yml</itemPath>
       </logicalFolder>
       <itemPath>Makefile</itemPath>
@@ -109,7 +106,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>PK3OBPlatformTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.00</languageToolchainVersion>
+        <languageToolchainVersion>3.01</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>

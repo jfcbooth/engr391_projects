@@ -161,8 +161,6 @@ void SYS_Initialize ( void* data )
 
     TMR4_Initialize();
 
-	UART1_Initialize();
-
 	UART2_Initialize();
 
 

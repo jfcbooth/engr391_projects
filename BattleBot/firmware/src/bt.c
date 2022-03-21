@@ -1,4 +1,4 @@
-#include "config/default/peripheral/uart/plib_uart1.h"
+#include "config/default/peripheral/uart/plib_uart2.h"
 #include "config/default/peripheral/gpio/plib_gpio.h"
 #include "motor.h"
 
@@ -62,11 +62,11 @@ void parse_command(char command[3]){
 
 void UART_handler(void){
     parse_command(command);
-    UART1_Write(command, 3);
-    UART1_Read(command, 3);
+    UART2_Write(command, 3);
+    UART2_Read(command, 3);
 }
 
 void setup_bt(void){
-    UART1_ReadCallbackRegister( (UART_CALLBACK) UART_handler, (uintptr_t)NULL);
-    UART1_Read(command, 3);
+    UART2_ReadCallbackRegister( (UART_CALLBACK) UART_handler, (uintptr_t)NULL);
+    UART2_Read(command, 3);
 }

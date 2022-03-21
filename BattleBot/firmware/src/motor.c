@@ -119,17 +119,27 @@ void attack_set_direction(int dir){
 
 
 void attack_chop(void){
-    attack_set_direction(-1); // go down
+    attack_set_direction(1); // go down
     int count = 0;
     int en1 = 0;
     attack_set_speed(1); // turn on attack
-    while(count < 15){
+    while(count < 40){
         int val = axeSensorB_Get();
         if(val != en1){
             en1 = val;
             count++;
         }
     }
-    attack_set_speed(-1); // turn on attack
-
+    attack_set_speed(0); // turn stop attack
+    attack_set_direction(-1); // go up
+    count = 0;
+    en1 = 0;
+    attack_set_speed(1); // turn on attack
+    while(count < 40){
+        int val = axeSensorB_Get();
+        if(val != en1){
+            en1 = val;
+            count++;
+        }
+    }
 }

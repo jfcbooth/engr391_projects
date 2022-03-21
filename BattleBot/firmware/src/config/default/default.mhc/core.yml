@@ -40,56 +40,56 @@ children:
       - type: User
         attributes: {value: DIGITAL}
   - type: String
-    attributes: {id: BSP_PIN_17_DIR}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: Out}
-  - type: String
-    attributes: {id: BSP_PIN_17_FUNCTION_NAME}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: rightDir}
-  - type: String
-    attributes: {id: BSP_PIN_17_FUNCTION_TYPE}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: GPIO}
-  - type: String
-    attributes: {id: BSP_PIN_19_DIR}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: ''}
-  - type: String
-    attributes: {id: BSP_PIN_19_FUNCTION_NAME}
+    attributes: {id: BSP_PIN_18_FUNCTION_NAME}
     children:
     - type: Values
       children:
       - type: User
         attributes: {value: BT_STATUS}
   - type: String
-    attributes: {id: BSP_PIN_19_FUNCTION_TYPE}
+    attributes: {id: BSP_PIN_18_FUNCTION_TYPE}
     children:
     - type: Values
       children:
       - type: User
         attributes: {value: GPIO}
   - type: String
-    attributes: {id: BSP_PIN_1_FUNCTION_NAME}
+    attributes: {id: BSP_PIN_32_DIR}
     children:
     - type: Values
       children:
       - type: User
-        attributes: {value: axeSensorB}
+        attributes: {value: Out}
   - type: String
-    attributes: {id: BSP_PIN_1_FUNCTION_TYPE}
+    attributes: {id: BSP_PIN_32_FUNCTION_NAME}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: rightEn}
+  - type: String
+    attributes: {id: BSP_PIN_32_FUNCTION_TYPE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: GPIO}
+  - type: String
+    attributes: {id: BSP_PIN_33_DIR}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: Out}
+  - type: String
+    attributes: {id: BSP_PIN_33_FUNCTION_NAME}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: rightDir}
+  - type: String
+    attributes: {id: BSP_PIN_33_FUNCTION_TYPE}
     children:
     - type: Values
       children:
@@ -138,27 +138,6 @@ children:
       - type: User
         attributes: {value: GPIO}
   - type: String
-    attributes: {id: BSP_PIN_38_DIR}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: Out}
-  - type: String
-    attributes: {id: BSP_PIN_38_FUNCTION_NAME}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: rightEn}
-  - type: String
-    attributes: {id: BSP_PIN_38_FUNCTION_TYPE}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: GPIO}
-  - type: String
     attributes: {id: BSP_PIN_41_DIR}
     children:
     - type: Values
@@ -201,84 +180,119 @@ children:
       - type: User
         attributes: {value: GPIO}
   - type: String
-    attributes: {id: BSP_PIN_60_FUNCTION_NAME}
+    attributes: {id: BSP_PIN_70_FUNCTION_NAME}
     children:
     - type: Values
       children:
       - type: User
-        attributes: {value: rightSensorA}
+        attributes: {value: axeSensorA}
   - type: String
-    attributes: {id: BSP_PIN_60_FUNCTION_TYPE}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: GPIO}
-  - type: String
-    attributes: {id: BSP_PIN_61_FUNCTION_NAME}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: rightSensorB}
-  - type: String
-    attributes: {id: BSP_PIN_61_FUNCTION_TYPE}
+    attributes: {id: BSP_PIN_70_FUNCTION_TYPE}
     children:
     - type: Values
       children:
       - type: User
         attributes: {value: GPIO}
   - type: String
-    attributes: {id: BSP_PIN_66_DIR}
+    attributes: {id: BSP_PIN_77_DIR}
     children:
     - type: Values
       children:
       - type: User
         attributes: {value: Out}
   - type: String
-    attributes: {id: BSP_PIN_66_FUNCTION_NAME}
+    attributes: {id: BSP_PIN_77_FUNCTION_NAME}
     children:
     - type: Values
       children:
       - type: User
-        attributes: {value: leftDir}
+        attributes: {value: axeEn}
   - type: String
-    attributes: {id: BSP_PIN_66_FUNCTION_TYPE}
+    attributes: {id: BSP_PIN_77_FUNCTION_TYPE}
     children:
     - type: Values
       children:
       - type: User
         attributes: {value: GPIO}
   - type: String
-    attributes: {id: BSP_PIN_67_DIR}
+    attributes: {id: BSP_PIN_7_FUNCTION_NAME}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: axeSensorB}
+  - type: String
+    attributes: {id: BSP_PIN_7_FUNCTION_TYPE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: GPIO}
+  - type: String
+    attributes: {id: BSP_PIN_83_DIR}
     children:
     - type: Values
       children:
       - type: User
         attributes: {value: Out}
   - type: String
-    attributes: {id: BSP_PIN_67_FUNCTION_NAME}
+    attributes: {id: BSP_PIN_83_FUNCTION_NAME}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: axeDir}
+  - type: String
+    attributes: {id: BSP_PIN_83_FUNCTION_TYPE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: GPIO}
+  - type: String
+    attributes: {id: BSP_PIN_89_DIR}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: Out}
+  - type: String
+    attributes: {id: BSP_PIN_89_FUNCTION_NAME}
     children:
     - type: Values
       children:
       - type: User
         attributes: {value: leftEn}
   - type: String
-    attributes: {id: BSP_PIN_67_FUNCTION_TYPE}
+    attributes: {id: BSP_PIN_89_FUNCTION_TYPE}
     children:
     - type: Values
       children:
       - type: User
         attributes: {value: GPIO}
   - type: String
-    attributes: {id: BSP_PIN_91_FUNCTION_NAME}
+    attributes: {id: BSP_PIN_8_MODE}
     children:
     - type: Values
       children:
       - type: User
-        attributes: {value: leftSensorA}
+        attributes: {value: DIGITAL}
   - type: String
-    attributes: {id: BSP_PIN_91_FUNCTION_TYPE}
+    attributes: {id: BSP_PIN_90_DIR}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: Out}
+  - type: String
+    attributes: {id: BSP_PIN_90_FUNCTION_NAME}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: leftDir}
+  - type: String
+    attributes: {id: BSP_PIN_90_FUNCTION_TYPE}
     children:
     - type: Values
       children:
@@ -290,7 +304,7 @@ children:
     - type: Values
       children:
       - type: User
-        attributes: {value: leftSensorB}
+        attributes: {value: BTN1}
   - type: String
     attributes: {id: BSP_PIN_92_FUNCTION_TYPE}
     children:
@@ -299,61 +313,12 @@ children:
       - type: User
         attributes: {value: GPIO}
   - type: String
-    attributes: {id: BSP_PIN_95_FUNCTION_NAME}
+    attributes: {id: BSP_PIN_9_MODE}
     children:
     - type: Values
       children:
       - type: User
-        attributes: {value: axeSensorA}
-  - type: String
-    attributes: {id: BSP_PIN_95_FUNCTION_TYPE}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: GPIO}
-  - type: String
-    attributes: {id: BSP_PIN_96_DIR}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: Out}
-  - type: String
-    attributes: {id: BSP_PIN_96_FUNCTION_NAME}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: axeDir}
-  - type: String
-    attributes: {id: BSP_PIN_96_FUNCTION_TYPE}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: GPIO}
-  - type: String
-    attributes: {id: BSP_PIN_97_DIR}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: Out}
-  - type: String
-    attributes: {id: BSP_PIN_97_FUNCTION_NAME}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: axeEn}
-  - type: String
-    attributes: {id: BSP_PIN_97_FUNCTION_TYPE}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: GPIO}
+        attributes: {value: DIGITAL}
   - type: Integer
     attributes: {id: CMP1_CLOCK_FREQUENCY}
     children:
@@ -451,21 +416,21 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: 'true'}
+        attributes: {id: core, value: 'false'}
   - type: Boolean
     attributes: {id: EVIC_24_HANDLER_LOCK}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: 'true'}
+        attributes: {id: core, value: 'false'}
   - type: String
     attributes: {id: EVIC_24_INTERRUPT_HANDLER}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: UART_1_InterruptHandler}
+        attributes: {id: core, value: UART_1_Handler}
   - type: Boolean
     attributes: {id: EVIC_32_ENABLE}
     children:
@@ -619,21 +584,21 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '15360'}
+        attributes: {id: core, value: '16128'}
   - type: Hex
     attributes: {id: SYS_PORT_A_TRIS}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '49155'}
+        attributes: {id: core, value: '0'}
   - type: Hex
     attributes: {id: SYS_PORT_B_TRIS}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '15360'}
+        attributes: {id: core, value: '16128'}
   - type: Hex
     attributes: {id: SYS_PORT_C_TRIS}
     children:
@@ -647,7 +612,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '0'}
+        attributes: {id: core, value: '68'}
   - type: Hex
     attributes: {id: SYS_PORT_E_TRIS}
     children:
@@ -668,7 +633,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '12288'}
+        attributes: {id: core, value: '3'}
   - type: Boolean
     attributes: {id: TIMER_3_INTERRUPT_ENABLE_UPDATE}
     children:
@@ -746,20 +711,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '0'}
-  - type: Boolean
-    attributes: {id: UART1_CLOCK_ENABLE}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: uart1, value: 'true'}
   - type: Integer
     attributes: {id: UART1_CLOCK_FREQUENCY}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '80000000'}
+        attributes: {id: core, value: '0'}
   - type: Boolean
     attributes: {id: UART2_CLOCK_ENABLE}
     children:
@@ -775,33 +733,12 @@ children:
       - type: Dynamic
         attributes: {id: core, value: '80000000'}
   - type: Boolean
-    attributes: {id: UART_1_INTERRUPT_ENABLE}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: uart1, value: 'true'}
-  - type: Boolean
     attributes: {id: UART_1_INTERRUPT_ENABLE_UPDATE}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: 'false'}
-  - type: String
-    attributes: {id: UART_1_INTERRUPT_HANDLER}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: uart1, value: UART_1_InterruptHandler}
-  - type: Boolean
-    attributes: {id: UART_1_INTERRUPT_HANDLER_LOCK}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: uart1, value: 'true'}
+        attributes: {id: core, value: 'true'}
   - type: Boolean
     attributes: {id: UART_2_INTERRUPT_ENABLE}
     children:
