@@ -5,10 +5,10 @@
 #define MAX_SPEED_VALUE 255
 #define SPEED_INCREMENTS 4
 #define SPEED_LEVEL_MULTIPLIER (MAX_SPEED_VALUE-MIN_SPEED_VALUE)/SPEED_INCREMENTS
-
+#define CHOP_ROTARY_COUNT 80
 int leftSpeed = 0; // 0-255 scale for pwm
 int rightSpeed = 0;
-int axeSpeed = MAX_SPEED_VALUE;
+int axeSpeed = 0;
 
 
 void timer4_handler(uint32_t status, uintptr_t context){
@@ -117,29 +117,49 @@ void attack_set_direction(int dir){
     TMR4_Start();
 }
 
+/* CP0.Count counts at half the CPU rate */
+#define TICK_HZ (CPU_HZ / 2)
+
+void delay_us(unsigned int us)
+{
+    // Convert microseconds us into how many clock ticks it will take
+    us *= 80000000 / 1000000 / 2; // Core Timer updates every 2 ticks
+
+    _CP0_SET_COUNT(0); // Set Core Timer count to 0
+
+    while (us > _CP0_GET_COUNT()); // Wait until Core Timer count reaches the number we calculated earlier
+}
+
+void delay_ms(int ms)
+{
+    delay_us(ms * 1000);
+}
+
 
 void attack_chop(void){
     attack_set_direction(1); // go down
     int count = 0;
     int en1 = 0;
     attack_set_speed(1); // turn on attack
-    while(count < 40){
+    while(count < CHOP_ROTARY_COUNT){
         int val = axeSensorB_Get();
         if(val != en1){
             en1 = val;
             count++;
         }
     }
-    attack_set_speed(0); // turn stop attack
-    attack_set_direction(-1); // go up
+    attack_set_speed(0); // stop after down attack
+    delay_ms(1000);
+    attack_set_direction(-1); // set direction to go up
     count = 0;
     en1 = 0;
-    attack_set_speed(1); // turn on attack
-    while(count < 40){
+    attack_set_speed(1); // start pulling back up
+    while(count < CHOP_ROTARY_COUNT){
         int val = axeSensorB_Get();
         if(val != en1){
             en1 = val;
             count++;
         }
     }
+    attack_set_speed(0); // stop after top has been reached 
 }

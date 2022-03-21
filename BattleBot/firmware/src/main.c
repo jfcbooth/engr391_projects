@@ -40,11 +40,14 @@ int main ( void )
     /* Initialize all modules */
     SYS_Initialize ( NULL );
     setup_motors();
-    setup_bt();  
+    //setup_bt();  
+    //attack_chop();
+    attack_set_direction(-1);
+    attack_set_speed(1);
 
-
-    while ( true )
+while ( true )
     {
+
         if(axeSensorA_Get() == 1){
             LED3_Set();
         } else {

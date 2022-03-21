@@ -12,6 +12,27 @@ children:
       - type: Dynamic
         attributes: {id: core, value: '0'}
   - type: String
+    attributes: {id: BSP_PIN_100_DIR}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: Out}
+  - type: String
+    attributes: {id: BSP_PIN_100_FUNCTION_NAME}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: axeDir}
+  - type: String
+    attributes: {id: BSP_PIN_100_FUNCTION_TYPE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: GPIO}
+  - type: String
     attributes: {id: BSP_PIN_10_MODE}
     children:
     - type: Values
@@ -138,6 +159,27 @@ children:
       - type: User
         attributes: {value: GPIO}
   - type: String
+    attributes: {id: BSP_PIN_3_DIR}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: Out}
+  - type: String
+    attributes: {id: BSP_PIN_3_FUNCTION_NAME}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: axeEn}
+  - type: String
+    attributes: {id: BSP_PIN_3_FUNCTION_TYPE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: GPIO}
+  - type: String
     attributes: {id: BSP_PIN_41_DIR}
     children:
     - type: Values
@@ -180,70 +222,28 @@ children:
       - type: User
         attributes: {value: GPIO}
   - type: String
-    attributes: {id: BSP_PIN_70_FUNCTION_NAME}
+    attributes: {id: BSP_PIN_4_FUNCTION_NAME}
     children:
     - type: Values
       children:
       - type: User
         attributes: {value: axeSensorA}
   - type: String
-    attributes: {id: BSP_PIN_70_FUNCTION_TYPE}
+    attributes: {id: BSP_PIN_4_FUNCTION_TYPE}
     children:
     - type: Values
       children:
       - type: User
         attributes: {value: GPIO}
   - type: String
-    attributes: {id: BSP_PIN_77_DIR}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: Out}
-  - type: String
-    attributes: {id: BSP_PIN_77_FUNCTION_NAME}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: axeEn}
-  - type: String
-    attributes: {id: BSP_PIN_77_FUNCTION_TYPE}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: GPIO}
-  - type: String
-    attributes: {id: BSP_PIN_7_FUNCTION_NAME}
+    attributes: {id: BSP_PIN_5_FUNCTION_NAME}
     children:
     - type: Values
       children:
       - type: User
         attributes: {value: axeSensorB}
   - type: String
-    attributes: {id: BSP_PIN_7_FUNCTION_TYPE}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: GPIO}
-  - type: String
-    attributes: {id: BSP_PIN_83_DIR}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: Out}
-  - type: String
-    attributes: {id: BSP_PIN_83_FUNCTION_NAME}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: axeDir}
-  - type: String
-    attributes: {id: BSP_PIN_83_FUNCTION_TYPE}
+    attributes: {id: BSP_PIN_5_FUNCTION_TYPE}
     children:
     - type: Values
       children:
@@ -612,14 +612,14 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '68'}
+        attributes: {id: core, value: '0'}
   - type: Hex
     attributes: {id: SYS_PORT_E_TRIS}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '0'}
+        attributes: {id: core, value: '48'}
   - type: Hex
     attributes: {id: SYS_PORT_F_TRIS}
     children:

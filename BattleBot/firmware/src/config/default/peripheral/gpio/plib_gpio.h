@@ -62,14 +62,32 @@
 // *****************************************************************************
 
 
+/*** Macros for axeEn pin ***/
+#define axeEn_Set()               (LATESET = (1<<5))
+#define axeEn_Clear()             (LATECLR = (1<<5))
+#define axeEn_Toggle()            (LATEINV= (1<<5))
+#define axeEn_OutputEnable()      (TRISECLR = (1<<5))
+#define axeEn_InputEnable()       (TRISESET = (1<<5))
+#define axeEn_Get()               ((PORTE >> 5) & 0x1)
+#define axeEn_PIN                  GPIO_PIN_RE5
+
+/*** Macros for axeSensorA pin ***/
+#define axeSensorA_Set()               (LATESET = (1<<6))
+#define axeSensorA_Clear()             (LATECLR = (1<<6))
+#define axeSensorA_Toggle()            (LATEINV= (1<<6))
+#define axeSensorA_OutputEnable()      (TRISECLR = (1<<6))
+#define axeSensorA_InputEnable()       (TRISESET = (1<<6))
+#define axeSensorA_Get()               ((PORTE >> 6) & 0x1)
+#define axeSensorA_PIN                  GPIO_PIN_RE6
+
 /*** Macros for axeSensorB pin ***/
-#define axeSensorB_Set()               (LATCSET = (1<<2))
-#define axeSensorB_Clear()             (LATCCLR = (1<<2))
-#define axeSensorB_Toggle()            (LATCINV= (1<<2))
-#define axeSensorB_OutputEnable()      (TRISCCLR = (1<<2))
-#define axeSensorB_InputEnable()       (TRISCSET = (1<<2))
-#define axeSensorB_Get()               ((PORTC >> 2) & 0x1)
-#define axeSensorB_PIN                  GPIO_PIN_RC2
+#define axeSensorB_Set()               (LATESET = (1<<7))
+#define axeSensorB_Clear()             (LATECLR = (1<<7))
+#define axeSensorB_Toggle()            (LATEINV= (1<<7))
+#define axeSensorB_OutputEnable()      (TRISECLR = (1<<7))
+#define axeSensorB_InputEnable()       (TRISESET = (1<<7))
+#define axeSensorB_Get()               ((PORTE >> 7) & 0x1)
+#define axeSensorB_PIN                  GPIO_PIN_RE7
 
 /*** Macros for BT_STATUS pin ***/
 #define BT_STATUS_Set()               (LATESET = (1<<8))
@@ -134,33 +152,6 @@
 #define LED4_Get()               ((PORTB >> 13) & 0x1)
 #define LED4_PIN                  GPIO_PIN_RB13
 
-/*** Macros for axeSensorA pin ***/
-#define axeSensorA_Set()               (LATDSET = (1<<10))
-#define axeSensorA_Clear()             (LATDCLR = (1<<10))
-#define axeSensorA_Toggle()            (LATDINV= (1<<10))
-#define axeSensorA_OutputEnable()      (TRISDCLR = (1<<10))
-#define axeSensorA_InputEnable()       (TRISDSET = (1<<10))
-#define axeSensorA_Get()               ((PORTD >> 10) & 0x1)
-#define axeSensorA_PIN                  GPIO_PIN_RD10
-
-/*** Macros for axeEn pin ***/
-#define axeEn_Set()               (LATDSET = (1<<2))
-#define axeEn_Clear()             (LATDCLR = (1<<2))
-#define axeEn_Toggle()            (LATDINV= (1<<2))
-#define axeEn_OutputEnable()      (TRISDCLR = (1<<2))
-#define axeEn_InputEnable()       (TRISDSET = (1<<2))
-#define axeEn_Get()               ((PORTD >> 2) & 0x1)
-#define axeEn_PIN                  GPIO_PIN_RD2
-
-/*** Macros for axeDir pin ***/
-#define axeDir_Set()               (LATDSET = (1<<6))
-#define axeDir_Clear()             (LATDCLR = (1<<6))
-#define axeDir_Toggle()            (LATDINV= (1<<6))
-#define axeDir_OutputEnable()      (TRISDCLR = (1<<6))
-#define axeDir_InputEnable()       (TRISDSET = (1<<6))
-#define axeDir_Get()               ((PORTD >> 6) & 0x1)
-#define axeDir_PIN                  GPIO_PIN_RD6
-
 /*** Macros for leftEn pin ***/
 #define leftEn_Set()               (LATGSET = (1<<1))
 #define leftEn_Clear()             (LATGCLR = (1<<1))
@@ -187,6 +178,15 @@
 #define BTN1_InputEnable()       (TRISASET = (1<<7))
 #define BTN1_Get()               ((PORTA >> 7) & 0x1)
 #define BTN1_PIN                  GPIO_PIN_RA7
+
+/*** Macros for axeDir pin ***/
+#define axeDir_Set()               (LATESET = (1<<4))
+#define axeDir_Clear()             (LATECLR = (1<<4))
+#define axeDir_Toggle()            (LATEINV= (1<<4))
+#define axeDir_OutputEnable()      (TRISECLR = (1<<4))
+#define axeDir_InputEnable()       (TRISESET = (1<<4))
+#define axeDir_Get()               ((PORTE >> 4) & 0x1)
+#define axeDir_PIN                  GPIO_PIN_RE4
 
 
 // *****************************************************************************
