@@ -1,0 +1,16 @@
+chipkit pinouts - https://digilent.com/reference/chipkit_pro_mx4/refmanual
+pmod hb5 manual - https://digilent.com/reference/pmod/pmodhb5/reference-manual
+
+To set direction:
+Dir high = forward
+Dir low = backward
+Speed = PWM on EN Pin
+
+rightEn 25 - RD1
+rightDir 24 - RD7
+
+leftEn 29 - RD2
+leftDir 28 - RD6
+
+btn1 42 RA06
+btn2 43 RA07

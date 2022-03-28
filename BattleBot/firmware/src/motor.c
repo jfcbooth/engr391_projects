@@ -5,7 +5,7 @@
 #define MAX_SPEED_VALUE 255
 #define SPEED_INCREMENTS 4
 #define SPEED_LEVEL_MULTIPLIER (MAX_SPEED_VALUE-MIN_SPEED_VALUE)/SPEED_INCREMENTS
-#define CHOP_ROTARY_COUNT 80
+#define CHOP_ROTARY_COUNT 140
 int leftSpeed = 0; // 0-255 scale for pwm
 int rightSpeed = 0;
 int axeSpeed = 0;
@@ -41,16 +41,10 @@ void setup_motors(void){
     TMR4_Start();
 }
 
-void movement_disable_motors(void){
-    // disable motors
-    rightEn_Clear();
-    leftEn_Clear();
-}
-
 // 1 = forwards, -1 = backwards (defaults to forward)
 void movement_set_direction_left(int dir){
     TMR4_Stop();
-    movement_disable_motors(); // always disable motors before changing direction to prevent a short
+    leftEn_Clear();
     if(dir == -1){
         leftDir_Clear();
     } else{
@@ -60,13 +54,16 @@ void movement_set_direction_left(int dir){
 }
 
 void movement_set_direction_right(int dir){
+    TMR4_Stop();
+    rightEn_Clear();
     if(dir == -1){
         rightDir_Set();
     } else{
         rightDir_Clear();
     }
+    TMR4_Start();
 }
-
+// values between 0 - SPEED_INCREMEBTS
 void movement_set_speed_left(int speed){
     TMR4_Stop();
     speed = (speed < 0) ? 0 : (speed > SPEED_INCREMENTS) ? SPEED_INCREMENTS : speed;
@@ -87,12 +84,6 @@ void movement_set_speed_right(int speed){
 // ATTACK MOTOR FUNCTIONS
 // **********************************
 
-void attack_disable_motors(void ){
-    // disable motors
-    axeEn_Clear();
-}
-
-
 // speeds level from 0-1
 void attack_set_speed(int speed){
     TMR4_Stop();
@@ -107,7 +98,7 @@ void attack_set_speed(int speed){
 // 1 = forwards, -1 = backwards (defaults to forward)
 void attack_set_direction(int dir){
     TMR4_Stop();
-    attack_disable_motors(); // always disable motors before changing direction to prevent a short
+        axeEn_Clear(); // always disable motors before changing direction to prevent a short
 
     if(dir == -1){
         axeDir_Clear();
@@ -137,19 +128,19 @@ void delay_ms(int ms)
 
 
 void attack_chop(void){
-    attack_set_direction(1); // go down
-    int count = 0;
-    int en1 = 0;
-    attack_set_speed(1); // turn on attack
-    while(count < CHOP_ROTARY_COUNT){
-        int val = axeSensorB_Get();
-        if(val != en1){
-            en1 = val;
-            count++;
-        }
-    }
-    attack_set_speed(0); // stop after down attack
-    delay_ms(1000);
+//    attack_set_direction(1); // set direction to down
+//    int count = 0; // # of steps
+//    int en1 = 0; // value of encoder 1
+//    attack_set_speed(1); // turn on attack
+//    while(count < CHOP_ROTARY_COUNT){
+//        int val = axeSensorB_Get();
+//        if(val != en1){
+//            en1 = val;
+//            count++;
+//        }
+//    }
+//    attack_set_speed(0); // stop after down attack
+//    delay_ms(3000); // wait 1 second
     attack_set_direction(-1); // set direction to go up
     count = 0;
     en1 = 0;

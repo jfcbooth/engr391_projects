@@ -57,13 +57,13 @@
 */
 void GPIO_Initialize ( void )
 {
-    AD1PCFGSET = 0x3f00; /* Digital Mode Enable */
+    AD1PCFGSET = 0x3c30; /* Digital Mode Enable */
 
     /* PORTA Initialization */
 
     /* PORTB Initialization */
     LATB = 0x0; /* Initial Latch Value */
-    TRISBCLR = 0x3f00; /* Direction Control */
+    TRISBCLR = 0x3c30; /* Direction Control */
 
     /* PORTC Initialization */
 

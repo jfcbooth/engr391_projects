@@ -41,13 +41,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 73415756935EC365B06270A19FB7EF20
-- generatedChecksum: 58C80BCFF5CE9A20DE4C60C1454EB055
+- generatedChecksum: F1D1EB8E23D40430E511A108D1337203
   logicalPath: config/default/peripheral/gpio
   name: plib_gpio.c
   physicalPath: peripheral/gpio
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 58C80BCFF5CE9A20DE4C60C1454EB055
+  userChecksum: F1D1EB8E23D40430E511A108D1337203
 - generatedChecksum: 56F547A6D4C06CCD2BC9C754F6F16B4A
   logicalPath: config/default/peripheral/tmr
   name: plib_tmr4.c
@@ -104,13 +104,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 0676C3882E7E767F6AC9CEAC9F1B1485
-- generatedChecksum: 7600D7A8CB8CD97003E231FF31A0B746
+- generatedChecksum: 8DA420C0FF624DD7AF9CF22A6FEAA3AB
   logicalPath: config/default/peripheral/gpio
   name: plib_gpio.h
   physicalPath: peripheral/gpio
   security: NON_SECURE
   type: HEADER
-  userChecksum: 7600D7A8CB8CD97003E231FF31A0B746
+  userChecksum: 8DA420C0FF624DD7AF9CF22A6FEAA3AB
 - generatedChecksum: AD9A7F1EF04DC1CC99D6B688E9248227
   logicalPath: config/default/peripheral/tmr
   name: plib_tmr4.h

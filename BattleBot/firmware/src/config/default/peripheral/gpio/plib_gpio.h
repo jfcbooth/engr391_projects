@@ -99,22 +99,22 @@
 #define BT_STATUS_PIN                  GPIO_PIN_RE8
 
 /*** Macros for rightEn pin ***/
-#define rightEn_Set()               (LATBSET = (1<<8))
-#define rightEn_Clear()             (LATBCLR = (1<<8))
-#define rightEn_Toggle()            (LATBINV= (1<<8))
-#define rightEn_OutputEnable()      (TRISBCLR = (1<<8))
-#define rightEn_InputEnable()       (TRISBSET = (1<<8))
-#define rightEn_Get()               ((PORTB >> 8) & 0x1)
-#define rightEn_PIN                  GPIO_PIN_RB8
+#define rightEn_Set()               (LATBSET = (1<<5))
+#define rightEn_Clear()             (LATBCLR = (1<<5))
+#define rightEn_Toggle()            (LATBINV= (1<<5))
+#define rightEn_OutputEnable()      (TRISBCLR = (1<<5))
+#define rightEn_InputEnable()       (TRISBSET = (1<<5))
+#define rightEn_Get()               ((PORTB >> 5) & 0x1)
+#define rightEn_PIN                  GPIO_PIN_RB5
 
 /*** Macros for rightDir pin ***/
-#define rightDir_Set()               (LATBSET = (1<<9))
-#define rightDir_Clear()             (LATBCLR = (1<<9))
-#define rightDir_Toggle()            (LATBINV= (1<<9))
-#define rightDir_OutputEnable()      (TRISBCLR = (1<<9))
-#define rightDir_InputEnable()       (TRISBSET = (1<<9))
-#define rightDir_Get()               ((PORTB >> 9) & 0x1)
-#define rightDir_PIN                  GPIO_PIN_RB9
+#define rightDir_Set()               (LATBSET = (1<<4))
+#define rightDir_Clear()             (LATBCLR = (1<<4))
+#define rightDir_Toggle()            (LATBINV= (1<<4))
+#define rightDir_OutputEnable()      (TRISBCLR = (1<<4))
+#define rightDir_InputEnable()       (TRISBSET = (1<<4))
+#define rightDir_Get()               ((PORTB >> 4) & 0x1)
+#define rightDir_PIN                  GPIO_PIN_RB4
 
 /*** Macros for LED1 pin ***/
 #define LED1_Set()               (LATBSET = (1<<10))
