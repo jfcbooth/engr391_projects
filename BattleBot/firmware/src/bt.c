@@ -2,26 +2,60 @@
 #include "config/default/peripheral/gpio/plib_gpio.h"
 #include "motor.h"
 
+#define QUEUE_LEN 15
 
 char command[3];
+
+// poor man's circular queue
+char button_queue[QUEUE_LEN+1];
+// location to add an item
+static int q_index = 0;
+// action that has been processed
+static int q_action_index = 0;
+
+// shift through the queue positions
+void q_action_advance(){
+    q_action_index = (q_action_index > QUEUE_LEN) ? 0 : q_action_index+1;
+}
+
+void q_index_advance(){
+    q_index = (q_index > QUEUE_LEN) ? 0 : q_index+1;
+}
+
+void q_add(char c){
+    button_queue[q_index] = c; // add a button to the queue
+    q_index_advance(); // move the to next position
+}
+
+// return the item in queue
+char q_pop(){
+    char to_return = button_queue[q_action_index];
+    button_queue[q_action_index] = 0;
+    q_action_advance(); // say an action has been processed
+    return to_return;
+}
+
+// checks if there is an item in the queue
+int q_empty(){
+    if(q_index == q_action_index){
+            return 1;
+    }
+    return 0;
+}
 
 void button_handler(char button){
     switch(button){
         case 'A': // attack down
-            attack_set_direction(1);
-            attack_set_speed(1);
-            // delay
-            attack_set_speed(0);
+            q_add('A');
             break;
         case 'B': // attack up
-            attack_set_direction(-1);
-            attack_set_speed(1);
-            // delay
-            attack_set_speed(0);
+            q_add('B');
             break;
         case 'C':
+            q_add('C');
             break;
         case 'D':
+            q_add('D');
             break;
     }
 }
@@ -49,7 +83,7 @@ void switch_handler(char side, char magnitude){
     }
 }
 
-void parse_command(char command[3]){
+void parse_command(void){
     switch(command[0]){
         case 'B':
             button_handler(command[1]);
@@ -61,8 +95,8 @@ void parse_command(char command[3]){
 }
 
 void UART_handler(void){
-    parse_command(command);
-    UART2_Write(command, 3);
+    parse_command();
+    //UART2_Write(command, 3);
     UART2_Read(command, 3);
 }
 

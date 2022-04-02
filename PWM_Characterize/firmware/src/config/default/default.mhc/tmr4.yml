@@ -14,6 +14,12 @@ children:
   - type: Integer
     attributes: {id: TIMER_CLOCK_FREQ}
     children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: Dynamic
@@ -21,6 +27,12 @@ children:
   - type: Long
     attributes: {id: TIMER_PERIOD}
     children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: Dynamic
@@ -28,10 +40,25 @@ children:
   - type: KeyValueSet
     attributes: {id: TIMER_PRE_SCALER}
     children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: User
         attributes: {value: '7'}
+  - type: KeyValueSet
+    attributes: {id: TIMER_SIDL}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
   - type: Boolean
     attributes: {id: TIMER_SLAVE}
     children:
@@ -39,6 +66,15 @@ children:
       children:
       - type: Dynamic
         attributes: {id: tmr4, value: 'false'}
+  - type: KeyValueSet
+    attributes: {id: TIMER_SRC_SEL}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
   - type: Float
     attributes: {id: TIMER_TIME_PERIOD_MS}
     children:
@@ -48,6 +84,10 @@ children:
         attributes: {id: max}
         children:
         - {type: Value, value: '819.2125'}
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: User
@@ -88,6 +128,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: tmr4, value: '1'}
+  - type: Boolean
+    attributes: {id: TMR_SLAVE_INTERRUPT_MODE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: tmr4, value: 'true'}
   - type: File
     attributes: {id: TMR_SOURCE}
     children:

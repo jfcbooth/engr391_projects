@@ -28,6 +28,8 @@
 #include "definitions.h"                // SYS function prototypes
 #include "motor.h"
 #include "uart.h"
+#include "config/default/peripheral/uart/plib_uart1.h"
+#include "config/default/peripheral/gpio/plib_gpio.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -69,17 +71,22 @@ int main ( void )
     /* Initialize all modules */
     SYS_Initialize ( NULL );
     setup_motors();
-    setup_uart();
-    set_command(info);
-    movement_set_speed_left(0);
-    movement_set_direction_left(1);
+    UART1_Write(info, 100);
+//    setup_uart();
+//    set_command(info);
+    //movement_set_speed_left(0);
+    //movement_set_direction_left(1);
     wait_ms(1000); // wait 1 seconnd for thng to settle
-    
+    //attack_chop();
     
     while ( true )
     {
         
-       
+        //UART1_Write(info, 6);
+//        wait_ms(1000);
+        if(BTN1_Get()){
+            attack_spam();
+        }
         /* Maintain state machines of all polled MPLAB Harmony modules. */
         SYS_Tasks ( );
 

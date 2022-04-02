@@ -123,6 +123,7 @@
 
 
 
+
 /*******************************************************************************
   Function:
     void SYS_Initialize ( void *data )
@@ -138,6 +139,7 @@ void SYS_Initialize ( void* data )
 
     /* Start out with interrupts disabled before configuring any modules */
     __builtin_disable_interrupts();
+
 
   
     CLK_Initialize();
@@ -164,6 +166,8 @@ void SYS_Initialize ( void* data )
 	UART1_Initialize();
 
 	UART2_Initialize();
+
+    TMR1_Initialize();
 
 
 

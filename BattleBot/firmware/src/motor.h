@@ -11,6 +11,9 @@ void movement_set_speed_right(int speed);
 void attack_disable_motors(void);
 void attack_set_speed(int speed);
 void attack_set_direction(int dir);
+void attack_down(void);
+void attack_up(void);
 void attack_chop(void);
+void attack_spam(void);
 
 #endif

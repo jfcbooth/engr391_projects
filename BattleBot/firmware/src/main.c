@@ -41,38 +41,35 @@ int main ( void )
     SYS_Initialize ( NULL );
     setup_motors();
     setup_bt();  
-//    attack_chop();
-    
-//    attack_set_direction(-1);
-//    attack_set_speed(1);
-    
-    
-//    movement_set_direction_left(1);
-//    movement_set_speed_left(1);
-//    
-//    movement_set_direction_right(1);
-//    movement_set_speed_right(1);
-    
+    char action = 0;
     while ( true )
     {
-        
-        if(axeSensorA_Get() == 1){
-            LED3_Set();
-        } else {
-            LED3_Clear();
-        }
-        if(axeSensorB_Get() == 1){
-            LED4_Set();
-        } else {
-            LED4_Clear();
-        }
-        if(BT_STATUS_Get() == 1){
-            LED1_Set();
-        } else {
-            LED1_Clear();
+        // this function should disable the UART interrupt before reading, but
+        // given how slowly we run actions, we should be fine
+        if(!q_empty()){
+            action = q_pop();
         }
         
-       
+        // if C has been read from the queue, chop
+        switch(action){
+            case 'A': // attack down
+                attack_down();
+                action = 0;
+                break;
+            case 'B': // attack up
+                attack_up();
+                action = 0;
+                break;
+            case 'C':
+                attack_chop();
+                action = 0;
+                break;
+            case 'D':
+                attack_spam();
+                action = 0;
+                break;
+        }
+        
         /* Maintain state machines of all polled MPLAB Harmony modules. */
         SYS_Tasks ( );
 

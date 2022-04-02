@@ -35,6 +35,40 @@ children:
         children:
         - {type: Value, value: '*** High Speed mode 4x baud clock enabled (BRGH =
             1) ***'}
+  - type: Integer
+    attributes: {id: UART_CLOCK_FREQ}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: uart1, value: '80000000'}
+  - type: Boolean
+    attributes: {id: UART_INTERRUPT_MODE_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: uart1, value: 'false'}
+  - type: KeyValueSet
+    attributes: {id: UART_OPERATING_MODE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: readOnly}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: uart1, value: '0'}
+  - type: Boolean
+    attributes: {id: UART_RING_BUFFER_MODE_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: uart1, value: 'false'}
   - type: Hex
     attributes: {id: UMODE_VALUE}
     children:
@@ -42,5 +76,20 @@ children:
       children:
       - type: Dynamic
         attributes: {id: uart1, value: '8'}
+- type: Attachments
+  children:
+  - type: DirectCapability
+    attributes: {id: UART1_UART}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: targetComponentID}
+        children:
+        - {type: Value, value: stdio}
+      - type: String
+        attributes: {id: targetAttachmentID}
+        children:
+        - {type: Value, value: UART}
 - type: ElementPosition
-  attributes: {x: '481', y: '22', id: uart1}
+  attributes: {x: '480', y: '23', id: uart1}

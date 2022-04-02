@@ -60,12 +60,18 @@
 // *****************************************************************************
 
 
+void TIMER_1_InterruptHandler( void );
 void TIMER_4_InterruptHandler( void );
 void UART_2_InterruptHandler( void );
 
 
 
 /* All the handlers are defined here.  Each will call its PLIB-specific function. */
+void __ISR(_TIMER_1_VECTOR, ipl1SOFT) TIMER_1_Handler (void)
+{
+    TIMER_1_InterruptHandler();
+}
+
 void __ISR(_TIMER_4_VECTOR, ipl1SOFT) TIMER_4_Handler (void)
 {
     TIMER_4_InterruptHandler();
