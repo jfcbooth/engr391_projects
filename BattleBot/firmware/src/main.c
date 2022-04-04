@@ -72,7 +72,10 @@ int main ( void )
         
         /* Maintain state machines of all polled MPLAB Harmony modules. */
         SYS_Tasks ( );
-
+        
+        if(BTN1_Get()){
+            attack_chop();
+        }
     }
 
     /* Execution should not come here during normal operation */

@@ -63,6 +63,22 @@ void button_handler(char button){
 
 
 // for L & R independent controls
+void switch_handler_forward(char side, char magnitude){
+    movement_set_direction_left(1);
+    movement_set_direction_right(1);
+    int mag_int = (int)magnitude-'0';
+
+    switch(side){
+        case 'L':
+            movement_set_speed_left(mag_int);
+            break;
+        case 'R':
+            movement_set_speed_right(mag_int);
+            break;
+    }
+}
+
+// for L & R independent controls
 void switch_handler_independent(char side, char magnitude){
     int mag_int = (int)magnitude-'0';
     int direction = (mag_int<4) ? -1 : 1;
@@ -111,7 +127,7 @@ void parse_command(void){
             button_handler(command[1]);
             break;
         case 'S':
-            switch_handler_independent(command[1], command[2]);
+            switch_handler_forward(command[1], command[2]);
             break;
     }
 }
