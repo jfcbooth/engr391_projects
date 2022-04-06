@@ -65,7 +65,7 @@ int main ( void )
                 action = 0;
                 break;
             case 'D':
-                attack_spam();
+                change_direction();
                 action = 0;
                 break;
         }

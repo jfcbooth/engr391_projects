@@ -61,11 +61,13 @@ void button_handler(char button){
     }
 }
 
+static int direction = 1; // start forward
 
-// for L & R independent controls
+// for L & R independent controls, using the entire range for forward
+// and a button to put it into reverse mode
 void switch_handler_forward(char side, char magnitude){
-    movement_set_direction_left(1);
-    movement_set_direction_right(1);
+    movement_set_direction_left(direction);
+    movement_set_direction_right(direction);
     int mag_int = (int)magnitude-'0';
 
     switch(side){
@@ -75,6 +77,14 @@ void switch_handler_forward(char side, char magnitude){
         case 'R':
             movement_set_speed_right(mag_int);
             break;
+    }
+}
+
+void change_direction(void){
+    if(direction == 1){
+        direction = -1;
+    }else {
+        direction = 1;
     }
 }
 
@@ -100,6 +110,8 @@ void switch_handler_independent(char side, char magnitude){
     }
 }
 
+
+// one slides handles forward/backward, one handles L+R
 void switch_handler_straight(char side, char magnitude){
     int mag_int = (int)magnitude-'0';
     int direction = (mag_int<4) ? -1 : 1;
