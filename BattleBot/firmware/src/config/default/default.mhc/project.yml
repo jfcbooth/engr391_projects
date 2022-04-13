@@ -48,13 +48,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: F1D1EB8E23D40430E511A108D1337203
-- generatedChecksum: E0456ABD5F9348B0764C22D5B9E7B716
+- generatedChecksum: 92753836775CF289DB5C446780EB0DBC
   logicalPath: config/default/peripheral/tmr1
   name: plib_tmr1.c
   physicalPath: peripheral/tmr1
   security: NON_SECURE
   type: SOURCE
-  userChecksum: E0456ABD5F9348B0764C22D5B9E7B716
+  userChecksum: 92753836775CF289DB5C446780EB0DBC
 - generatedChecksum: 56F547A6D4C06CCD2BC9C754F6F16B4A
   logicalPath: config/default/peripheral/tmr
   name: plib_tmr4.c

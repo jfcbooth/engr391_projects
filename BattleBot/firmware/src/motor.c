@@ -2,8 +2,8 @@
 #include "config/default/peripheral/tmr/plib_tmr4.h"
 #include "config/default/peripheral/tmr1/plib_tmr1.h"
 
-#define MIN_SPEED_VALUE 60
-#define MAX_SPEED_VALUE 150
+#define MIN_SPEED_VALUE 120
+#define MAX_SPEED_VALUE 220
 #define SPEED_INCREMENTS 8
 #define SPEED_LEVEL_MULTIPLIER (MAX_SPEED_VALUE-MIN_SPEED_VALUE)/SPEED_INCREMENTS
 #define CHOP_ROTARY_COUNT 25

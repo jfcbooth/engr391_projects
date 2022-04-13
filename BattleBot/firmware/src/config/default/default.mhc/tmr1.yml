@@ -24,7 +24,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: tmr1, value: '62499'}
+        attributes: {id: tmr1, value: '15624'}
   - type: KeyValueSet
     attributes: {id: TIMER1_PRE_SCALER}
     children:
@@ -44,7 +44,7 @@ children:
     - type: Values
       children:
       - type: User
-        attributes: {value: '200.0'}
+        attributes: {value: '50.0'}
   - type: Integer
     attributes: {id: TMR1_PRESCALER_VALUE}
     children:
@@ -53,4 +53,4 @@ children:
       - type: Dynamic
         attributes: {id: tmr1, value: '256'}
 - type: ElementPosition
-  attributes: {x: '487', y: '20', id: tmr1}
+  attributes: {x: '487', y: '19', id: tmr1}

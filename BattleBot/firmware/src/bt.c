@@ -66,10 +66,7 @@ static int direction = 1; // start forward
 // for L & R independent controls, using the entire range for forward
 // and a button to put it into reverse mode
 void switch_handler_forward(char side, char magnitude){
-    movement_set_direction_left(direction);
-    movement_set_direction_right(direction);
     int mag_int = (int)magnitude-'0';
-
     switch(side){
         case 'L':
             movement_set_speed_left(mag_int);
@@ -86,6 +83,8 @@ void change_direction(void){
     }else {
         direction = 1;
     }
+    movement_set_direction_left(direction);
+    movement_set_direction_right(direction);
 }
 
 // for L & R independent controls

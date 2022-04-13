@@ -41,6 +41,9 @@ int main ( void )
     SYS_Initialize ( NULL );
     setup_motors();
     setup_bt();  
+    // set motors initial direction
+    movement_set_direction_left(1);
+    movement_set_direction_right(1);
     char action = 0;
     while ( true )
     {
